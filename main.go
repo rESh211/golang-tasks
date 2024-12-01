@@ -1,7 +1,7 @@
 package main
 
 import (
-	run "github.com/rESh211/golang-tasks/Task-2.2"
+	products "github.com/rESh211/golang-tasks/Task-2.1"
 )
 
 /*
@@ -28,7 +28,7 @@ import legacy "github.com/rESh211/golang-tasks/Legacy"
 Подробные шпаргалки в файле HELP.md. Его удобнее смотреть на самом github, там он красиво рисуется
 */
 func main() {
+	products.Run()
 	//task1.Run()
-	//products.Run()
-	run.Run()
+	//run.Run()
 }

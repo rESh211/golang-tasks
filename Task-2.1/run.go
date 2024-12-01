@@ -1,6 +1,9 @@
 package products
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type User struct {
 	name string
@@ -100,4 +103,31 @@ func Run() {
 	fmt.Printf("Стоимость доставки почтой: %d\n", CalculateOrderShippingCost(post, order))
 	fmt.Printf("Стоимость самовывоза: %d\n", CalculateOrderShippingCost(pickup, order))
 
+	sword := &Character{}
+	sword.SetAttackStrategy(&SwordAttack{})
+
+	bow := &Character{}
+	bow.SetAttackStrategy(&BowAttack{})
+
+	magic := &Character{}
+	magic.SetAttackStrategy(&MagicAttack{})
+
+	fmt.Printf("Персонаж атакует, урон мечом нанес: %d\n", sword.AttackProcessing())
+	fmt.Printf("Персонаж атакует, урон луком нанесено: %d\n", bow.AttackProcessing())
+	fmt.Printf("Персонаж атакует, урон магией нанесено: %d\n", magic.AttackProcessing())
+
+	log1 := GetInstance()
+	log2 := GetInstance()
+
+	// Проверяем, что оба экземпляра одинаковые.
+	if log1 == log2 {
+		log.Println("один и тот же экземпляр.")
+	} else {
+		log.Println("разные")
+	}
+	log1.Log("fvddf")
+
+	// Получение единственного экземпляра конфигурации.
+	cfg := GetInstance()
+	log.Println(cfg)
 }
